@@ -2,14 +2,10 @@ from extensions import db
 from datetime import datetime
 
 class Valoracion(db.Model):
-    """
-    Modelo Valoracion: puntuaciones abiertas que los usuarios pueden dejar para un prestador.
-    No están ligadas a contrataciones (MVP).
-    """
     __tablename__ = "valoraciones"
     id = db.Column(db.Integer, primary_key=True)
     prestador_id = db.Column(db.Integer, db.ForeignKey('prestadores.id'), nullable=False)
-    puntaje = db.Column(db.Integer, nullable=False)  # 1..5 (validación mínima en endpoints)
+    puntaje = db.Column(db.Integer, nullable=False)
     comentario = db.Column(db.Text, nullable=True)
     creado_en = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
@@ -19,5 +15,5 @@ class Valoracion(db.Model):
             "prestador_id": self.prestador_id,
             "puntaje": self.puntaje,
             "comentario": self.comentario,
-            "creado_en": self.creado_en.isoformat(),
+            "creado_en": self.creado_en.isoformat()
         }
