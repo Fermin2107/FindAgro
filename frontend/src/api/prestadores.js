@@ -1,6 +1,6 @@
 // Funciones para consumir la API de prestadores y sus detalles
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = https://github.com/Fermin2107/FindAgro || "http://localhost:5000";
 
 // Listar prestadores (con filtros opcionales)
 export async function getPrestadores({ localidad = "", servicio = "" } = {}) {
