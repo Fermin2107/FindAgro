@@ -1,6 +1,6 @@
 // Funciones para consumir la API de prestadores y sus detalles
 
-const API_URL = https://github.com/Fermin2107/FindAgro || "http://localhost:5000";
+const API_URL = https://github.com/Fermin2107/FindAgro;
 
 // Listar prestadores (con filtros opcionales)
 export async function getPrestadores({ localidad = "", servicio = "" } = {}) {
